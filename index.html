@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Som Center</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./imgs/logo.png">
+</head>
+<body>
+    <div id="cabecalho">
+        <img src="./imgs/logo.png" alt="Logo Som Center">
+        <div class="cabecalho-title">
+            <h1>Som Center</h1>
+            <p>Instrumentos | Acessórios | Atendimento especializado</p>
+        </div>
+        <ul class="topicos">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#informacoes">Contato</a></li>
+        </ul>
+    </div>
+    <div id="home">
+        <div class="home-info">
+            <h2>O som certo <span style="color: #fcb900;">começa aqui</span></h2>
+            <p>Instrumentos profissionais e atendimento especializado. Encontre o timbre <br> e a pegada que combinam com você — testado por músicos.</p>
+            <div class="links">
+                <a href="#" class="colection">Ver coleção</a>
+                <a href="#" class="test">Agendar um teste</a>
+            </div>
+        </div>
+        <img src="./imgs/guitar.png" alt="" class="guitarra">
+    </div>
+    <div id="qualidades">
+        <div class="card">
+            <h2 class="icon">🎙️</h2>
+            <div class="text">
+                <h2>Qualidade profissional</h2>
+                <p>Instrumentos testados por músicos.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="icon">🛠️</h2>
+            <div class="text">
+                <h2>Garantia e suporte</h2>
+                <p>Assistência técnica e garantia estendida.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="icon">🚚</h2>
+            <div class="text">
+                <h2>Frete rápido</h2>
+                <p>Embalagem segura e logística ágil.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="icon">💳</h2>
+            <div class="text">
+                <h2>Pagamento facilitado</h2>
+                <p>12x sem juros e parcelas flexíveis.</p>
+            </div>
+        </div>
+    </div>
+    <div id="produtos">
+        <h2>Produto em destaque</h2>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/NvayJGYuXGw?autoplay=1&mute=1&controls=0&loop=1&playlist=NvayJGYuXGw" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div id="avaliacoes">
+        <h2>O que os músicos dizem</h2>
+        <div class="depoimentos">
+            <div class="depoimento">
+            <p>"A Som Center tem uma seleção incrível de instrumentos. Encontrei <br> exatamente o que procurava!"</p>
+            <h3>- Ana S.</h3>
+        </div>
+        <div class="depoimento">
+            <p>"O atendimento especializado fez toda a diferença na minha <br> escolha. Recomendo!"</p>
+            <h3>- Carlos M.</h3>
+        </div>
+        <div class="depoimento">
+            <p>"Entrega rápida e produtos de alta qualidade. Estou muito <br> satisfeito com minha compra."</p>
+            <h3>- Beatriz L.</h3>
+        </div>
+        </div>
+    </div>
+    <div id="informacoes">
+        <h2>Fale conosco</h2>
+        <form action="#" id="formulario">
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Seu email" required>
+            <input type="number" placeholder="Número +55(ddd) 9999-9999" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div id="rodape">
+        <p>© 2025 Som Center. Todos os direitos reservados.</p>
+    </div>
+    <script>
+        const formulario = document.getElementById('formulario');
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+            formulario.reset();
+        });
+    </script>
+</body>
+</html>
