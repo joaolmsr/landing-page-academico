@@ -20,11 +20,11 @@ body {
     background-color: #1f1f1f;
     color: #FFFFFF;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita barra de rolagem horizontal indesejada */
 }
 
 ol, ul {
-	list-style: none;
+    list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--cinza-medio);
     padding-right: 50px;
@@ -36,7 +36,7 @@ li {
 }
 
 li:hover {
-	color: white;
+    color: white;
 }
 
 a {
@@ -48,6 +48,7 @@ a {
     display: flex;
     align-items: center;
     padding-left: 70px;
+    flex-wrap: wrap; /* Permite quebra de linha se necessário */
 }
 
 #cabecalho img {
@@ -58,13 +59,12 @@ a {
 
 .cabecalho-title {
     font-size: 12px;
+    margin-left: 15px; /* Pequeno ajuste para separar da logo */
 }
 
 .cabecalho-title p{
-    color:var(--cinza-medio);
+    color: var(--cinza-medio);
 }
-
-
 
 .topicos {
     display: flex;
@@ -75,33 +75,41 @@ a {
 
 #home {
     display: flex;
-
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between;
+    padding-bottom: 50px;
 }
 
 .home-info {
-    width: 1200px;
+    /* CORREÇÃO: Trocamos width fixo por max-width e % */
+    width: 100%;
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 48px;
     padding-top: 130px;
 }
 
-.home-info h2{
+.home-info h2 {
     font-size: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.home-info p{
+.home-info p {
     color: var(--cinza-medio);
 }
 
 .guitarra {
-    width: 500px;
+    /* CORREÇÃO: Imagem responsiva */
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
 }
 
 .links {
     margin-top: 32px;
     display: flex;
     gap: 16px;
+    flex-wrap: wrap; /* Botões podem quebrar linha em telas muito pequenas */
 }
 
 .colection {
@@ -110,19 +118,24 @@ a {
     padding: 10px 20px;
     border-radius: 15px;
     color: var(--cinza-escuro);
+    text-align: center;
 }
 
 .test {
-    font-weight: 100px;
+    font-weight: 100; /* Corrigido de 100px para 100 */
     border: 0.5px solid white;
     padding: 10px 20px;
     border-radius: 15px;
+    text-align: center;
 }
 
 #qualidades {
     display: flex;
     justify-content: space-around;
     margin: 150px 0;
+    flex-wrap: wrap; /* CORREÇÃO: Permite que os cards desçam */
+    gap: 30px;       /* Espaço entre cards */
+    padding: 0 20px;
 }
 
 .card {
@@ -132,6 +145,8 @@ a {
     padding: 20px;
     border-radius: 15px;
     transition: 0.3s;
+    width: 400px; /* Define um tamanho base para os cards */
+    align-items: center;
 }
 
 .card:hover {
@@ -143,9 +158,10 @@ a {
     background-color: var(--cinza-medio);
     padding: 20px;
     border-radius: 50%;
+    font-size: 24px; /* Ajuste para garantir visibilidade */
 }
 
-.text p{
+.text p {
     color: var(--cinza-medio);
 }
 
@@ -153,19 +169,31 @@ a {
     text-align: center;
     font-size: 25px;
     margin-bottom: 150px;
+    padding: 0 20px;
 }
 
 #produtos iframe {
     margin-top: 50px;
     border-radius: 15px;
+    /* CORREÇÃO: Vídeo responsivo */
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 16/9; /* Mantém proporção do YouTube */
 }
 
 #avaliacoes {
-    margin-left: 10%;
+    /* CORREÇÃO: Margem relativa em vez de fixa */
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
-#avaliacoes h2{
+#avaliacoes h2 {
     font-size: 25px;
+    margin-bottom: 20px;
+    margin: 0 auto;
 }
 
 .depoimentos {
@@ -173,6 +201,8 @@ a {
     gap: 70px;
     margin-top: 40px;
     align-items: center;
+    flex-wrap: wrap; /* Permite quebrar linha */
+    justify-content: center;
 }
 
 .depoimento {
@@ -180,6 +210,7 @@ a {
     padding: 20px;
     border-radius: 15px;
     transition: 0.3s;
+    max-width: 350px; /* Limita largura */
 }
 
 .depoimento:hover {
@@ -190,13 +221,15 @@ a {
     margin-top: 100px;
     text-align: center;
     margin-bottom: 70px;
+    padding: 0 20px;
 }
 
 #formulario {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -227,4 +260,73 @@ a {
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
+}
+
+@media (max-width: 850px) {
+    /* Ajuste Cabeçalho */
+    #cabecalho {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .cabecalho-title {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .topicos {
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Ajuste Home */
+    #home {
+        flex-direction: column-reverse; /* Imagem em cima, texto embaixo (opcional) ou column */
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .home-info {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .home-info h2 {
+        font-size: 36px; /* Fonte menor no celular */
+    }
+
+    .links {
+        justify-content: center;
+    }
+
+    .guitarra {
+        margin-bottom: 30px;
+        max-width: 80%; /* Imagem um pouco menor no celular */
+    }
+
+    /* Ajuste Cards */
+    #qualidades {
+        margin: 80px 0;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 100%; /* Card ocupa largura total no celular */
+        max-width: 400px;
+    }
+
+    /* Ajuste Depoimentos */
+    .depoimentos {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .depoimento {
+        width: 100%;
+    }
 }
